@@ -52,7 +52,7 @@ marta.entrenar(50)*/
 
 class Product{
     //constructor
-    constructor(id,title,price,stock,images,onsale,supplier){
+    constructor(id,title,price,stock,images,onsale,supplier,color,description){
         this.id =id;
         this.title=title;
         this.price=price;
@@ -61,8 +61,10 @@ class Product{
         this.onsale=onsale;
         //atributo privado
         this._supplier=supplier;
+        this.color=color;
+        this.description=description;
     }
-    //metodos getter y setter del atributo privado
+    /*//metodos getter y setter del atributo privado
     get supplier() {
         return this._supplier;
     }
@@ -78,12 +80,12 @@ class Product{
             return;
         }
         else this.stock=this.stock-units
-    }
+    }*/
 }
 
 
 
-
+/*
 const prod1= new Product();
 const prod2= new Product("002","radio",150);
 const prod3=new Product("003","tv",5000,10,true,[],true)
@@ -105,9 +107,32 @@ console.log(prod5);
 
 prod5.sellUnits(10);//Usa metodo sellUnits para vender 10 unidades
 prod5.sellUnits(5);//Usa metodo sellUnits para vender 5 unidades
-console.log(prod5);
+console.log(prod5);*/
+
+
+const prod1=new Product("001","tv",5000,10,true,[],true);
+const prod2=new Product("002","radio",400,10,true,[],true);
+const prod3=new Product("003","dvd",600,10,true,[],true);
+const prod4=new Product("004","pc",5000,10,true,[],true);
+
+const products =[prod1,prod2,prod3,prod4];
+console.log(products);
+console.log(products[1]);
+console.log(products[3].title);
 
 
 
 
 
+const prod5=new Product("005","camera",5000,10,true,[],true);
+const prod6=new Product("006","pc",5000,10,true,[],true);
+
+products.unshift(prod5);
+products.push(prod6);
+console.log(products);
+
+
+console.log("Nuevo ejercicio");
+products.shift();
+products.pop();
+console.log(products);
